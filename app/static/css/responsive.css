@@ -5,7 +5,7 @@
 /* Tablet Breakpoint */
 @media (max-width: 1024px) {
     .main-content {
-        padding: 0 1.5rem;
+        padding: 0; /* Remove side padding so full-width sections can stretch */
     }
     .app-form {
         max-width: 90%;
@@ -14,6 +14,21 @@
 
 /* Mobile Breakpoint */
 @media (max-width: 768px) {
+    .main-content {
+        padding: 0;
+        width: 100%;
+    }
+
+    .container,
+    .hero-container,
+    .hero {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        box-sizing: border-box;
+    }
+
     .nav-links {
         flex-direction: column;
         display: none; /* Toggle via JavaScript */
