@@ -1,12 +1,30 @@
 import math
 import re
-from flask import Blueprint, current_app, jsonify, render_template, request
+from io import BytesIO
+
+from flask import (
+    Blueprint,
+    abort,
+    current_app,
+    flash,
+    jsonify,
+    redirect,
+    render_template,
+    request,
+    send_file,
+    url_for,
+)
 from flask_limiter import RateLimitExceeded
 from flask_mail import Message
 
-# Import instances directly from app module
-from app import db, mail, limiter
+from app import db, limiter, mail
 from app.models.contact import ContactMessage
+from app.services.export_service import (
+    generate_csv_bytes,
+    generate_excel_bytes,
+    get_contact_messages_list,
+    purge_all_contact_messages,
+)
 
 form_bp = Blueprint("forms", __name__)
 
@@ -36,7 +54,10 @@ INQUIRY_LABELS = {
 
 @form_bp.errorhandler(RateLimitExceeded)
 def handle_rate_limit_exceeded(e):
-    retry_after_seconds = getattr(e, "retry_after", 3600)
+    retry_after_seconds = getattr(e, "retry_after", None)
+    if retry_after_seconds is None:
+        retry_after_seconds = 3600
+
     minutes_left = max(1, math.ceil(retry_after_seconds / 60))
     unit_str = "minute" if minutes_left == 1 else "minutes"
 
@@ -131,3 +152,56 @@ def submit_contact():
             ),
             500,
         )
+
+
+def verify_admin_token():
+    """Validates secret key token from URL parameters or form submissions."""
+    token = request.args.get("token") or request.form.get("token")
+    expected_token = current_app.config.get("ADMIN_EXPORT_KEY")
+    if not token or token != expected_token:
+        abort(403)
+    return token
+
+
+@form_bp.route("/admin/export-dashboard", methods=["GET"])
+def admin_export_dashboard():
+    token = verify_admin_token()
+    messages = get_contact_messages_list()
+    return render_template(
+        "admin/export_dashboard.html", messages=messages, token=token
+    )
+
+
+@form_bp.route("/export/contact-messages/csv", methods=["GET"])
+def export_contact_csv():
+    verify_admin_token()
+    csv_data = generate_csv_bytes()
+    return send_file(
+        BytesIO(csv_data),
+        mimetype="text/csv",
+        as_attachment=True,
+        download_name="contact_messages_backup.csv",
+    )
+
+
+@form_bp.route("/export/contact-messages/excel", methods=["GET"])
+def export_contact_excel():
+    verify_admin_token()
+    excel_data = generate_excel_bytes()
+    return send_file(
+        BytesIO(excel_data),
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        as_attachment=True,
+        download_name="contact_messages_backup.xlsx",
+    )
+
+
+@form_bp.route("/admin/purge-contact-messages", methods=["POST"])
+def purge_contact_messages_route():
+    token = verify_admin_token()
+    deleted_count = purge_all_contact_messages()
+    flash(
+        f"Successfully purged {deleted_count} messages from the database.",
+        "success",
+    )
+    return redirect(url_for("forms.admin_export_dashboard", token=token))

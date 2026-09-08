@@ -20,11 +20,14 @@ DEFAULT_DB_URI = f"sqlite:///{(INSTANCE_DIR / 'codnesta.db').as_posix()}"
 class Config:
     """Base configuration with shared defaults."""
 
-    SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key-change-in-production")
+    SECRET_KEY = os.getenv("SECRET_KEY", "ebaf6033aec2c3c87565bd355b29415a1a5b32748b3ac132cc3b033fffbab68d")
 
     # Uses DATABASE_URL if set in .env, otherwise defaults to the dynamically built path
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", DEFAULT_DB_URI)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    # Admin Export Dashboard Access Key
+    ADMIN_EXPORT_KEY = os.getenv("ADMIN_EXPORT_KEY", "CodNesta_Admin_7x92Kxcx%__1")
 
     # Flask-Mail Configuration
     MAIL_SERVER = os.getenv("MAIL_SERVER", "smtp.gmail.com")
