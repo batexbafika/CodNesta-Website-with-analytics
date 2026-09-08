@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}Ecosystem - CodNesta Group{% endblock %}
+
+{% block page_css %}
+<!-- Font Awesome CDN -->
+<link 
+  rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+  crossorigin="anonymous" 
+  referrerpolicy="no-referrer" 
+/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/ecosystem/ecosystem-hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/ecosystem/core-pathway.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/ecosystem/talent-pipeline.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/ecosystem/value-drivers.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/ecosystem/stakeholders.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/ecosystem/conversion-banner.css')}}">
+{% endblock %}
+
+{% block header %}
+  {% include 'components/_header.html' %}
+
+{% endblock %}
+
+{% block page_inline_css %}
+{% endblock %}
+
+{% block meta_tags %}
+  <!-- SEO & Standard Meta Tags -->
+  <meta name="description" content="Explore the CodNesta Ecosystem: An interconnected network bridging practical skill building, real-world execution, and professional growth for digital talent and partners.">
+  <meta name="keywords" content="CodNesta Ecosystem, Tech Pathways, Pre-Dev, Developer Training, Internships, Tech Partnerships, Cameroon Tech">
+  <meta name="author" content="CodNesta Group">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CodNesta Group">
+  <meta property="og:title" content="Ecosystem - CodNesta Group">
+  <meta property="og:description" content="Discover how the CodNesta Ecosystem connects learning, real-world execution, and professional opportunities.">
+  <meta property="og:image" content="{{ url_for('static', filename='images/og-ecosystem.png') }}">
+  <meta property="og:url" content="{{ request.url }}">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@CodNesta">
+  <meta name="twitter:creator" content="@CodNesta">
+  <meta name="twitter:title" content="Ecosystem - CodNesta Group">
+  <meta name="twitter:description" content="Discover how the CodNesta Ecosystem connects learning, real-world execution, and professional opportunities.">
+  <meta name="twitter:image" content="{{ url_for('static', filename='images/twitter-ecosystem.png') }}">
+{% endblock %}
+
+{% block content %}
+  {% include 'components/ecosystem/ecosystem-hero.html' %}
+  {% include 'components/ecosystem/core-pathway.html' %}
+  {% include 'components/ecosystem/talent-pipeline.html' %}
+  {% include 'components/ecosystem/value-drivers.html' %}
+  {% include 'components/ecosystem/stakeholders.html' %}
+  {% include 'components/ecosystem/conversion-banner.html' %}
+
+{% endblock %}
+
+{% block page_js %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/ecosystem/ecosystem-hero.js') }}"></script>
+<script src="{{ url_for('static', filename='js/ecosystem/core-pathway.js') }}"></script>
+<script src="{{ url_for('static', filename='js/ecosystem/talent-pipeline.js') }}"></script>
+
+{% endblock %}
+
+{% block page_inline_js %}
+{% endblock %}
+
+{% block footer %}
+  {% include 'components/_footer.html' %}
+{% endblock %}

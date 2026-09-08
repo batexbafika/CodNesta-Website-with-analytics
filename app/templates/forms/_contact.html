@@ -1,0 +1,114 @@
+<section id="contact-cta" class="cta-section">
+  <div class="cta-container">
+    
+    <div class="cta-wrapper reveal-on-scroll reveal-tilt-up" style="--delay: 0.1s;">
+      
+      <div class="cta-info">
+        <span class="cta-subtitle">Engage With Us</span>
+        <h2 class="cta-title">Ready to build, scale, or collaborate?</h2>
+        <p class="cta-description">
+          Whether you are looking to hire verified talent, scale an enterprise solution, establish a partnership, or share feedback-we are ready to connect.
+        </p>
+
+        <div class="cta-options">
+          <button type="button" class="cta-option-btn active" data-role="business" onclick="switchCtaRole('business')">
+            <div class="option-icon-wrapper">
+              <i class="fa-solid fa-building option-icon"></i>
+            </div>
+            <div class="option-text">
+              <strong>Enterprise & Businesses</strong>
+              <small>Custom software & talent hiring</small>
+            </div>
+          </button>
+
+          <button type="button" class="cta-option-btn" data-role="network" onclick="switchCtaRole('network')">
+            <div class="option-icon-wrapper">
+              <i class="fa-solid fa-handshake option-icon"></i>
+            </div>
+            <div class="option-text">
+              <strong>Agentee Network & Partners</strong>
+              <small>Marketplace, mentorship & partnerships</small>
+            </div>
+          </button>
+
+          <button type="button" class="cta-option-btn" data-role="talent" onclick="switchCtaRole('talent')">
+            <div class="option-icon-wrapper">
+              <i class="fa-solid fa-laptop-code option-icon"></i>
+            </div>
+            <div class="option-text">
+              <strong>Talent & Developers</strong>
+              <small>Pre-Dev academy & collective gigs</small>
+            </div>
+          </button>
+
+          <button type="button" class="cta-option-btn" data-role="feedback" onclick="switchCtaRole('feedback')">
+            <div class="option-icon-wrapper">
+              <i class="fa-regular fa-comments option-icon"></i>
+            </div>
+            <div class="option-text">
+              <strong>Feedback & Inquiries</strong>
+              <small>Share thoughts or community suggestions</small>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="cta-form-wrapper">
+        <form id="ctaContactForm" class="cta-form" action="{{ url_for('forms.submit_contact') }}" method="POST">
+          
+          <div class="form-group">
+            <label for="contactName" class="form-label">Full Name</label>
+            <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Alex Morgan" required />
+          </div>
+
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">Work / Personal Email</label>
+            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="alex@company.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="inquiryType" class="form-label">Primary Interest</label>
+            <select id="inquiryType" name="inquiry_type" class="form-select" required>
+              <option value="software_consulting" selected>Enterprise Software & Advisory</option>
+
+              <option value="predev_academy">Apply for Pre-Dev Pathway (Primary Gateway)</option>
+              <option value="intern_advance">Intern in Advance Entry</option>
+              <option value="skill_programs">Skill Bootcamps & Programs</option>
+               <option value="Academic_Internships">Academic Internships</option>
+               <option value="Academic_Partnerships">Academic Partnerships</option>
+              <option value="collective_gig">Participating in Collective Gigs</option>
+
+              <option value="need_website">I Need a Website</option>
+              <option value="need_mobile_app">I Need a Mobile App</option>
+              <option value="certified_developer">Certified Developer Program</option>
+              <option value="hire_developers">Hire Verified Talent</option>
+
+              <option value="start_partnership">Start a Partnership</option>
+              <option value="collaboration_request">Project Collaboration</option>
+              <option value="Volunteer_with_CodNesta">Volunteer</option>
+              <option value="agentee_business">Joining Agentee Business Network</option>
+              <option value="mentorship_program">Mentorship & Community Leadership</option>
+
+              <option value="send_feedback">Send Us Feedback</option>
+              <option value="general_inquiry">Others / General Inquiry</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage" class="form-label">Message / Details</label>
+            <textarea id="contactMessage" name="message" rows="4" class="form-textarea" placeholder="Tell us about your proposal, project needs, feedback, or collaboration goals..." required></textarea>
+          </div>
+
+          <button type="submit" class="cta-submit-btn">
+            <span>Send Message</span>
+            <i class="fa-solid fa-arrow-right btn-arrow"></i>
+          </button>
+
+          <p id="formStatus" class="form-status-msg" style="display: none;"></p>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section>

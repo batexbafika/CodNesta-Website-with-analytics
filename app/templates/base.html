@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CodNesta Group - Innovation for Generations{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Core CSS Tokens & Global Component Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tokens.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/header.css') }}">
+
+    <!-- Separate Classic Animations Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/animations.css') }}">
+
+    <!-- Page-Specific CSS Block -->
+    {% block page_css %}{% endblock %}
+
+    <!-- Global Responsive Overrides -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+<body>
+
+    <!-- Unified Header Component -->
+    {% include 'components/_navbar.html' %}
+
+    <!-- Dynamic Main Content Region -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Unified Footer Component -->
+    {% include 'components/_footer.html' %}
+
+    {# Cookie Banner Component #}
+    {% include 'components/_cookie_banner.html' %}
+
+    <!-- Global Client-side Logic -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block page_js %}{% endblock %}
+</body>
+</html>

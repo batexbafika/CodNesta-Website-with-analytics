@@ -1,0 +1,149 @@
+/* ==========================================================================
+   METRICS / IMPACT COMPONENT STYLES (FULL RESPONSIVE MODULE)
+   ========================================================================== */
+
+/* Dark Theme Container Setup */
+.metrics-section {
+  padding: clamp(var(--space-6, 2.5rem), 6vw, var(--space-8, 5rem)) 0;
+  background-color: var(--color-navy-dark, #072235);
+  color: #ffffff;
+  font-family: var(--font-primary, sans-serif);
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metrics-container {
+  max-width: var(--container-width, 1200px);
+  margin: 0 auto;
+  padding: 0 clamp(var(--space-4, 1rem), 4vw, var(--container-padding, 2rem));
+}
+
+/* Header */
+.metrics-header {
+  text-align: center;
+  max-width: 44rem;
+  margin: 0 auto clamp(var(--space-5, 1.5rem), 4vw, var(--space-7, 2.5rem)) auto;
+}
+
+.metrics-subtitle {
+  display: inline-block;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: var(--font-weight-semibold, 600);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold, #f59e0b);
+  background: rgba(245, 158, 11, 0.1);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-pill, 9999px);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  margin-bottom: var(--space-3, 0.75rem);
+}
+
+.metrics-title {
+  font-size: clamp(var(--font-size-xl, 1.25rem), 4vw, var(--font-size-2xl, 1.75rem));
+  font-weight: var(--font-weight-bold, 700);
+  line-height: var(--line-height-heading, 1.2);
+  color: #ffffff;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .metrics-title {
+    font-size: var(--font-size-3xl, 2.25rem);
+  }
+}
+
+.metrics-description {
+  margin-top: var(--space-4, 1rem);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--font-size-base, 1rem);
+  line-height: var(--line-height-body, 1.6);
+}
+
+/* Responsive Grid for Metrics */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(var(--space-4, 1rem), 3vw, var(--space-5, 1.25rem));
+}
+
+@media (min-width: 640px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6, 1.5rem);
+  }
+}
+
+/* Metric Cards */
+.metric-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md, 8px);
+  padding: clamp(var(--space-4, 1rem), 3vw, var(--space-6, 1.5rem)) var(--space-4, 1rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform var(--ease-classic, cubic-bezier(0.4, 0, 0.2, 1)) 0.3s,
+              background-color var(--ease-classic, cubic-bezier(0.4, 0, 0.2, 1)) 0.3s,
+              border-color var(--ease-classic, cubic-bezier(0.4, 0, 0.2, 1)) 0.3s,
+              box-shadow var(--ease-classic, cubic-bezier(0.4, 0, 0.2, 1)) 0.3s;
+}
+
+@media (hover: hover) {
+  .metric-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.metric-value {
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  font-weight: var(--font-weight-bold, 700);
+  line-height: 1;
+  color: #ffffff;
+  margin-bottom: var(--space-2, 0.5rem);
+  letter-spacing: -0.02em;
+}
+
+.metric-value span {
+  color: var(--color-gold, #f59e0b);
+}
+
+.metric-label {
+  font-size: clamp(var(--font-size-sm, 0.875rem), 2vw, var(--font-size-base, 1rem));
+  font-weight: var(--font-weight-semibold, 600);
+  color: #ffffff;
+  margin: 0 0 var(--space-2, 0.5rem) 0;
+  line-height: 1.3;
+}
+
+.metric-detail {
+  font-size: var(--font-size-xs, 0.75rem);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: var(--line-height-body, 1.6);
+  margin: 0;
+}
+
+/* ==========================================================================
+   EXTRA SMALL MOBILE BREAKPOINTS (< 380px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .metric-card {
+    padding: var(--space-4, 1rem) var(--space-2, 0.5rem);
+  }
+
+  .metric-value {
+    font-size: 2rem;
+  }
+}

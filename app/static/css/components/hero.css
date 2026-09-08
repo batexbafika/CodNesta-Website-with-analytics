@@ -1,0 +1,311 @@
+/* ==========================================================================
+   HERO COMPONENT STYLES
+   ========================================================================== */
+
+.hero-swiper {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  /* Pure solid navy background */
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: relative;
+  padding: var(--space-8) 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Layer 1: Ultra-soft gold ambient glow on the left */
+.hero-ambient-glow {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  top: -250px;
+  left: -200px;
+  background: radial-gradient(
+    circle, 
+    rgba(var(--color-gold-rgb), 0.08) 0%, 
+    rgba(var(--color-gold-rgb), 0.02) 45%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+/* Layer 2: Ultra-soft radial depth glow behind the visual element */
+.hero-backdrop::after {
+  content: '';
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  bottom: -300px;
+  right: -200px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.01) 50%,
+    transparent 75%
+  );
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.hero-eyebrow-badge {
+  background-color: rgba(var(--color-gold-rgb), 0.15);
+  color: var(--color-gold-light);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.hero-eyebrow-text {
+  color: rgba(var(--color-white-rgb), 0.8);
+  font-size: var(--font-size-sm);
+}
+
+.hero-title {
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-4);
+  color: var(--color-white);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.text-accent {
+  color: var(--color-gold);
+}
+
+.hero-description {
+  color: rgba(var(--color-white-rgb), 0.85);
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-6);
+  max-width: 540px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.hero-proof-list {
+  display: flex;
+  gap: var(--space-5);
+  color: rgba(var(--color-white-rgb), 0.9);
+  font-size: var(--font-size-sm);
+}
+
+.proof-item i {
+  color: var(--color-gold);
+  margin-right: var(--space-2);
+}
+
+.hero-visual {
+  position: relative;
+}
+
+/* Soft floating depth for image container */
+/* Container holding the image */
+.hero-image-wrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-navy);
+}
+
+/* Feathered image edges to blend seamlessly into navy background */
+.hero-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  
+  /* Deeper mask gradient that starts fading from 40% outward */
+  -webkit-mask-image: 
+    radial-gradient(
+      ellipse 85% 85% at center,
+      rgba(0, 0, 0, 1) 40%,
+      rgba(0, 0, 0, 0.4) 70%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  mask-image: 
+    radial-gradient(
+      ellipse 85% 85% at center,
+      rgba(0, 0, 0, 1) 40%,
+      rgba(0, 0, 0, 0.4) 70%,
+      rgba(0, 0, 0, 0) 100%
+    );
+}
+
+/* Optional soft inner navy shadow to accentuate edge blending */
+.hero-image-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 0 50px 25px var(--color-navy);
+}
+
+.hero-glass-card {
+  position: absolute;
+  bottom: var(--space-5);
+  left: var(--space-5);
+  right: var(--space-5);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.glass-card-icon {
+  font-size: var(--font-size-xl);
+  color: var(--color-gold);
+}
+
+.glass-card-title {
+  display: block;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  color: var(--color-navy-dark);
+}
+
+.glass-card-sub {
+  color: rgba(var(--color-navy-rgb), 0.7);
+  font-size: var(--font-size-sm);
+}
+  
+/* --------------------------------------------------------------------------
+   SWIPER NAVIGATION & PAGINATION CONTROLS
+   -------------------------------------------------------------------------- */
+.hero-swiper-controls {
+  position: absolute;
+  bottom: var(--space-5);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-7);
+  pointer-events: none;
+}
+
+/* Pagination Pills */
+.hero-swiper .swiper-pagination {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  pointer-events: auto;
+}
+
+.hero-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 !important;
+  background: var(--color-white);
+  opacity: 0.35;
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-pill);
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  width: 28px;
+  background: var(--color-gold);
+  opacity: 1;
+}
+
+/* Custom Navigation Buttons */
+.hero-swiper .swiper-button-prev,
+.hero-swiper .swiper-button-next {
+  position: static;
+  margin-top: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(var(--color-navy-rgb), 0.6);
+  border: 1px solid rgba(var(--color-white-rgb), 0.15);
+  backdrop-filter: blur(12px);
+  color: var(--color-white);
+  transition: all var(--transition-fast);
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-swiper .swiper-button-prev:hover,
+.hero-swiper .swiper-button-next:hover {
+  background: var(--color-gold);
+  color: var(--color-navy-dark);
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+/* Reset default Swiper icon font scale */
+.hero-swiper .swiper-button-prev::after,
+.hero-swiper .swiper-button-next::after {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* Responsive Overrides */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero-swiper-controls {
+    padding: 0 var(--space-4);
+  }
+}

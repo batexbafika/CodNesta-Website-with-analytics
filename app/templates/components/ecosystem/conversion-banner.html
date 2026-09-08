@@ -1,0 +1,33 @@
+<!-- ==========================================================================
+   6. UNIFIED CONVERSION BANNER
+   ========================================================================== -->
+<section class="conversion-banner-section" id="conversion-banner">
+  <div class="container">
+    <div class="conversion-banner reveal-on-scroll reveal-tilt-up" style="--delay: 0.1s;">
+      
+      <!-- Background / Accent Graphic with Unsplash Fallback -->
+      <div class="banner-media-wrapper">
+        <img src="{{ url_for('static', filename='images/conversion-bg.svg') }}" 
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80';" 
+             alt="CodNesta Ecosystem Collaboration" 
+             class="banner-bg-img" 
+             loading="lazy">
+        <div class="banner-overlay"></div>
+      </div>
+
+      <!-- Banner Content -->
+      <div class="banner-content">
+        <span class="banner-eyebrow">Get Started</span>
+        <h2 class="banner-title">Ready to Join the Ecosystem?</h2>
+        <p class="banner-description">
+          Whether you want to apply as talent, partner as an institution, or collaborate as a business-take the next step today.
+        </p>
+        <a href="{{ url_for('main.home') }}#contact-cta" class="banner-btn">
+          <span>Get In!</span>
+          <i class="fa-solid fa-arrow-right btn-arrow"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>

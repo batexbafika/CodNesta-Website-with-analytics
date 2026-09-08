@@ -1,0 +1,321 @@
+/* ==========================================================================
+   CORE PATHWAYS ARCHITECTURE COMPONENT (core-pathways.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Section Layout & Container
+   -------------------------------------------------------------------------- */
+.core-pathways-section {
+  padding: 6rem 2rem;
+  background-color: var(--color-navy, #0a3857);
+  color: #ffffff;
+  position: relative;
+}
+
+.core-pathways-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   2. Section Header & Screenshots-Matched Pill Badge
+   -------------------------------------------------------------------------- */
+.core-pathways-section .section-header,
+.core-pathways-section__heading {
+  max-width: 680px;
+  margin: 0 0 4rem 0;
+  text-align: left;
+}
+
+/* Frosted Glass Eyebrow Pill Badge */
+.core-pathways-section .badge--subtle,
+.core-pathways-section__eyebrow {
+  display: inline-block;
+  padding: 0.65rem 1.75rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Title Typography */
+.core-pathways-section .section-title,
+.core-pathways-section__title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+}
+
+/* Solid Accent Gold Text Highlight */
+.core-pathways-section .section-title span,
+.core-pathways-section__title span,
+.core-pathways-section .text-gradient-gold {
+  color: var(--color-gold, #f4b400);
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.core-pathways-section .section-subtitle,
+.core-pathways-section__intro {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. Grid Architecture
+   -------------------------------------------------------------------------- */
+.pathways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* --------------------------------------------------------------------------
+   4. Pathway Cards & Glassmorphism
+   -------------------------------------------------------------------------- */
+.pathway-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  transition: border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              opacity 0.35s ease;
+}
+
+.pathway-card:hover {
+  border-color: rgba(244, 180, 0, 0.5);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.pathway-card.pathway-card--dimmed {
+  opacity: 0.45 !important;
+}
+
+/* Featured Pathway Card */
+.pathway-card--featured {
+  background: rgba(10, 56, 87, 0.75);
+  border: 1px solid var(--color-gold, #f4b400);
+  box-shadow: 0 0 24px rgba(244, 180, 0, 0.18);
+}
+
+/* Primary Gateway Badge */
+.pathway-card__badge {
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  background: var(--color-gold, #f4b400);
+  color: var(--color-navy, #0a3857);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Card Icons & Content */
+.pathway-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(244, 180, 0, 0.12);
+  color: var(--color-gold, #f4b400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(244, 180, 0, 0.25);
+}
+
+.pathway-card__icon-svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.pathway-card__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.pathway-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.pathway-card__description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Checklist Details
+   -------------------------------------------------------------------------- */
+.pathway-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.pathway-card__list li {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.pathway-card__list li i,
+.pathway-card__list li span {
+  color: var(--color-gold, #f4b400);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   6. Action Buttons
+   -------------------------------------------------------------------------- */
+.pathway-card__action {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.pathway-card .button--full {
+  width: 100%;
+  text-align: center;
+}
+
+.pathway-card .button--primary {
+  background: var(--color-gold, #f4b400);
+  color: var(--color-navy, #0a3857);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pathway-card .button--primary:hover {
+  background: #e0a500;
+  box-shadow: 0 6px 20px rgba(244, 180, 0, 0.4);
+}
+
+.pathway-card .button--secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.pathway-card .button--secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   7. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+
+/* Laptop / Mid-Desktop Screen Scaling */
+@media (max-width: 1100px) {
+  .pathways-grid {
+    gap: 1.5rem;
+  }
+
+  .pathway-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Tablet Layout (2 Columns) */
+@media (max-width: 992px) {
+  .core-pathways-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .core-pathways-section .section-header,
+  .core-pathways-section__heading {
+    margin-bottom: 3rem;
+  }
+
+  .pathways-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .pathway-card--featured {
+    grid-column: span 2;
+  }
+}
+
+/* Mobile Layout (Single Column) */
+@media (max-width: 640px) {
+  .core-pathways-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .core-pathways-section .section-header,
+  .core-pathways-section__heading {
+    text-align: left;
+    margin-bottom: 2.5rem;
+  }
+
+  .pathways-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pathway-card--featured {
+    grid-column: span 1;
+  }
+
+  .pathway-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .pathway-card__badge {
+    right: 14px;
+  }
+}

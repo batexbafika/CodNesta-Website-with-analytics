@@ -1,0 +1,179 @@
+/* ==========================================================================
+   CODNASTA PRIVACY HERO STYLES (RESPONSIVE + LUXURY ANIMATIONS)
+   ========================================================================== */
+
+/* Universal Containment Guard */
+.privacy-hero,
+.privacy-hero * {
+  box-sizing: border-box;
+}
+
+.privacy-hero {
+  position: relative;
+  background: linear-gradient(
+    180deg, 
+    var(--color-navy, #06263c) 0%, 
+    var(--color-navy, #041d2e) 100%
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-8, 4rem) 0 var(--space-7, 3rem);
+  text-align: center;
+  color: var(--color-text-inverse, #ffffff);
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Ambient Radial Glow */
+.hero-ambient-glow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  width: 600px;
+  height: 350px;
+  margin-left: -300px;
+  background: radial-gradient(
+    circle, 
+    rgba(244, 180, 0, 0.15) 0%, 
+    rgba(10, 56, 87, 0) 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.privacy-hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-width, 1200px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-padding, 1.25rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Glass Badge Pill with Subtle Micro-Interaction */
+.privacy-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-gold, #ffd45c);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-pill, 999px);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: var(--font-weight-semibold, 600);
+  backdrop-filter: blur(8px);
+  margin-bottom: var(--space-4, 1rem);
+  transition: transform 0.3s var(--ease-classic, cubic-bezier(0.16, 1, 0.3, 1)),
+              border-color 0.3s var(--ease-classic, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.privacy-hero-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-gold, #f4b400);
+}
+
+.badge-icon {
+  width: 14px;
+  height: 14px;
+  stroke: var(--color-gold, #f4b400);
+  flex-shrink: 0;
+}
+
+/* Typography Scale & Containment */
+.privacy-hero-title {
+  font-size: var(--font-size-3xl, 2.75rem);
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-text-inverse, #ffffff);
+  line-height: var(--line-height-tight, 1.15);
+  margin: 0 0 var(--space-3, 0.75rem) 0;
+  letter-spacing: -0.02em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.privacy-hero-subtitle {
+  font-size: var(--font-size-md, 1.125rem);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: var(--line-height-body, 1.7);
+  max-width: 640px;
+  width: 100%;
+  margin: 0 0 var(--space-5, 1.5rem) 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Metadata Bar */
+.privacy-hero-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  font-size: var(--font-size-xs, 0.75rem);
+  color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  white-space: nowrap;
+}
+
+.meta-label {
+  font-weight: var(--font-weight-regular, 400);
+}
+
+.meta-value {
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-gold-light, #ffd45c);
+}
+
+.meta-divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Layout Overrides
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .privacy-hero {
+    padding: var(--space-6, 2rem) 0 var(--space-5, 1.5rem);
+  }
+
+  .privacy-hero-title {
+    font-size: var(--font-size-2xl, 2rem);
+  }
+
+  .privacy-hero-subtitle {
+    font-size: var(--font-size-base, 1rem);
+  }
+
+  .privacy-hero-meta {
+    flex-wrap: wrap;
+    gap: var(--space-2, 0.5rem);
+  }
+
+  .meta-divider {
+    display: none; /* Hide bullet divider when metadata wraps onto new lines */
+  }
+
+  .hero-ambient-glow {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-hero-title {
+    font-size: var(--font-size-xl, 1.5rem);
+  }
+
+  .privacy-hero-subtitle {
+    font-size: var(--font-size-sm, 0.875rem);
+  }
+}

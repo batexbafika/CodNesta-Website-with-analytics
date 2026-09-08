@@ -1,0 +1,169 @@
+/* ==========================================================================
+   ECOSYSTEM HERO COMPONENT (ecosystem-hero.css)
+   ========================================================================== */
+
+.ecosystem-hero {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Dark Navy Overlay Gradient for Visual Depth */
+.ecosystem-hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(10, 56, 87, 0.85), rgba(10, 56, 87, 0.85));
+  z-index: 1;
+}
+
+/* Centralized Container */
+.ecosystem-hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ecosystem-hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Badge Styling with CodNesta Gold Accent */
+.ecosystem-hero .badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background: rgba(252, 252, 251, 0.12);
+  color: var(--color-white, #fcfbfb);
+  backdrop-filter: blur(8px);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Headline */
+.ecosystem-hero .hero-title {
+  font-size: clamp(2.25rem, 5vw + 1rem, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+}
+
+/* CodNesta White-to-Gold Gradient Text */
+.ecosystem-hero .text-gradient {
+  background:var(--color-gold, #f4b400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.ecosystem-hero .hero-subtitle {
+  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.25rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
+
+/* CTAs Container */
+.ecosystem-hero .hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.ecosystem-hero .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Primary CTA Button: CodNesta Gold Background */
+.ecosystem-hero .button--primary {
+  background: var(--color-gold, #f4b400);
+  color: var(--color-navy, #0a3857);
+  box-shadow: 0 4px 20px rgba(244, 180, 0, 0.35);
+  border: 1px solid transparent;
+}
+
+.ecosystem-hero .button--primary:hover {
+  transform: translateY(-2px);
+  background: #e0a500;
+  box-shadow: 0 6px 25px rgba(244, 180, 0, 0.5);
+}
+
+/* Outline CTA Button: Clean Glassmorphism on Navy */
+.ecosystem-hero .button--outline {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.ecosystem-hero .button--outline:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .ecosystem-hero {
+    min-height: 75vh;
+    padding: 5rem 1.25rem 3.5rem;
+  }
+
+  .ecosystem-hero .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    gap: 1rem;
+  }
+
+  .ecosystem-hero .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ecosystem-hero {
+    padding: 4rem 1rem 3rem;
+  }
+
+  .ecosystem-hero .badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 1rem;
+  }
+}

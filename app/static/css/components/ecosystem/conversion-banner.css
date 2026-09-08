@@ -1,0 +1,113 @@
+/* ==========================================================================
+   6. UNIFIED CONVERSION BANNER (COMPACT CSS)
+   ========================================================================== */
+.conversion-banner-section {
+  padding: 2.25rem 0;
+  background-color: #ffffff;
+}
+
+.conversion-banner {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 4vw, 2.5rem);
+  text-align: center;
+  color: #ffffff;
+  background-color: var(--color-navy-dark, #072235);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 28px -10px rgba(7, 34, 53, 0.3);
+}
+
+.banner-media-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.banner-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg, 
+    rgba(7, 34, 53, 0.92) 0%, 
+    rgba(10, 56, 87, 0.88) 100%
+  );
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.banner-eyebrow {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold, #f59e0b);
+  background: rgba(245, 158, 11, 0.15);
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  margin-bottom: 0.6rem;
+}
+
+.banner-title {
+  font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.banner-description {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.45;
+  margin: 0 auto 1.25rem auto;
+}
+
+.banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-gold, #f59e0b);
+  color: var(--color-navy-dark, #072235);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.65rem 1.35rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.banner-btn:hover {
+  background-color: #e0a500;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.btn-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.banner-btn:hover .btn-arrow {
+  transform: translateX(3px);
+}

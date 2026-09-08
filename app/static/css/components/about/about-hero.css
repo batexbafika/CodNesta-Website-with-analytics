@@ -1,0 +1,258 @@
+/* ==========================================================================
+   CODNASTA ABOUT HERO SECTION STYLES
+   Solid Navy Background, Crisp Sharp Text & Human-Centric UI
+   ========================================================================== */
+
+.about-hero {
+  position: relative;
+  padding: var(--space-9) 0 var(--space-8);
+  overflow: hidden;
+  background-color: var(--color-navy);
+  color: var(--color-text-inverse);
+  font-family: var(--font-primary);
+}
+
+/* Solid background without ambient glow or stars */
+.about-hero__pattern {
+  position: absolute;
+  inset: 0;
+  background: var(--color-navy);
+  pointer-events: none;
+}
+
+.about-hero__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .about-hero__layout {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-8);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   LEFT COLUMN: CONTENT
+   -------------------------------------------------------------------------- */
+
+.about-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: rgba(244, 180, 0, 0.1);
+  border: 1px solid rgba(244, 180, 0, 0.3);
+  color: var(--color-gold);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-5);
+  text-shadow: none;
+}
+
+.about-hero__badge .badge-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--color-gold);
+}
+
+/* Sharp, Solid Title */
+.about-hero__title {
+  font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-bold);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+  color: var(--color-white);
+  text-shadow: none;
+  filter: none;
+}
+
+.about-hero__title span {
+  color: var(--color-gold);
+  background: none;
+  -webkit-text-fill-color: initial;
+  text-shadow: none;
+}
+
+.about-hero__description {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-body);
+  color: var(--color-border-light);
+  margin-bottom: var(--space-6);
+  max-width: 560px;
+  text-shadow: none;
+}
+
+/* Action Area */
+.about-hero__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
+}
+
+.about-hero__actions .button--primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-gold);
+  color: var(--color-navy-dark);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  box-shadow: none;
+  transition: background var(--transition-base), transform var(--transition-base);
+}
+
+.about-hero__actions .button--primary:hover {
+  transform: translateY(-2px);
+  background: var(--color-gold-light);
+}
+
+.about-hero__actions .button--secondary {
+  color: var(--color-border-light);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.about-hero__actions .button--secondary:hover {
+  color: var(--color-gold);
+}
+
+/* Feature Items */
+.about-hero__features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-3) var(--space-4);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.about-hero__feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-border-light);
+  text-shadow: none;
+}
+
+.about-hero__feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-pill);
+  background: rgba(244, 180, 0, 0.15);
+  color: var(--color-gold);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT COLUMN: VISUAL & FLOATING CARD
+   -------------------------------------------------------------------------- */
+
+.about-hero__visual {
+  position: relative;
+}
+
+.about-hero__image-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: var(--color-navy-light);
+}
+
+.about-hero__image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.about-hero__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 253, 253, 0.4);
+}
+
+.about-hero__visual-accent {
+  position: absolute;
+  bottom: -12px;
+  right: -12px;
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-lg);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Floating Commitment Card */
+.about-hero__floating-card {
+  position: absolute;
+  bottom: -1.75rem;
+  left: var(--space-4);
+  right: var(--space-4);
+  padding: var(--space-5);
+  background: var(--color-white);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 576px) {
+  .about-hero__floating-card {
+    left: -1.5rem;
+    right: auto;
+    max-width: 320px;
+  }
+}
+
+.about-hero__floating-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-1);
+  text-shadow: none;
+}
+
+.about-hero__floating-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-navy-dark);
+  margin-bottom: var(--space-2);
+  line-height: var(--line-height-heading);
+  text-shadow: none;
+}
+
+.about-hero__floating-line {
+  width: 28px;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-2);
+}
+
+.about-hero__floating-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-navy);
+  line-height: 1.45;
+  margin: 0;
+  text-shadow: none;
+}

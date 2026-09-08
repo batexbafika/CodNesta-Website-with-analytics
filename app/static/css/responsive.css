@@ -1,0 +1,30 @@
+/* ==========================================
+   CODNESTA CENTRAL RESPONSIVE STYLESHEET
+   ========================================== */
+
+/* Tablet Breakpoint */
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 0 1.5rem;
+    }
+    .app-form {
+        max-width: 90%;
+    }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        display: none; /* Toggle via JavaScript */
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .form-group input, 
+    .form-group textarea {
+        font-size: 16px; /* Prevents auto-zoom on iOS inputs */
+    }
+}

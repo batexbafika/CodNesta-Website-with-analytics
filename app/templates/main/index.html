@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - CodNesta Group{% endblock %}
+
+{% block page_css %}
+<!-- Font Awesome CDN -->
+<link 
+  rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+  crossorigin="anonymous" 
+  referrerpolicy="no-referrer" 
+/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/divisions.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/impact.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/about.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/ecosystem.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/impact-metrix.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/contact.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/blog.css') }}">
+{% endblock %}
+
+{% block meta_tags %}
+  <meta name="description" content="CodNesta Group is a leading technology and talent development company, specializing in software solutions, developer mentorship, and strategic partnerships.">
+  <meta name="keywords" content="CodNesta, technology, software development, talent development, mentorship, partnerships, enterprise solutions, networking">
+  <meta name="author" content="CodNesta Group">
+  <meta property="og:title" content="CodNesta Group - Technology & Talent Development">
+  <meta property="og:description" content="Leading the way in software solutions, developer mentorship, and strategic partnerships.">
+  <meta property="og:image" content="{{ url_for('static', filename='images/og-image.png') }}">
+  <meta property="og:url" content="{{ request.url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CodNesta Group - Technology & Talent Development">
+  <meta name="twitter:description" content="Leading the way in software solutions, developer mentorship, and strategic partnerships.">
+  <meta name="twitter:image" content="{{ url_for('static', filename='images/twitter-card.png') }}">
+{% endblock %}
+
+{% block content %}
+  {% include 'components/_hero.html' %}
+  
+  <!-- Divisions Overview Section -->
+  {% include 'components/_divisions.html' %}
+  {% include 'components/_impact.html' %}
+  {% include 'components/_about.html' %}
+  {% include 'components/_ecosystem.html' %}
+  {% include 'components/_impact-metrix.html' %}
+  {% include 'forms/_contact.html' %}
+  {% include 'components/_blog.html' %}
+{% endblock %}
+
+{% block page_js %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/hero.js') }}"></script>
+<script src="{{ url_for('static', filename='js/divisions.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+<script src="{{ url_for('static', filename='js/contact-form.js') }}"></script>
+<script src="{{ url_for('static', filename='js/blog.js') }}"></script>
+<script src="{{ url_for('static', filename='js/impact.js') }}"></script>
+<script src="{{ url_for('static', filename='js/impact-metrix.js') }}"></script>
+{% endblock %}
+
+{% block page_inline_js %}
+{% endblock %}
+
+{% block footer %}
+  {% include 'components/_footer.html' %}
+{% endblock %}

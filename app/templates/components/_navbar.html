@@ -1,0 +1,48 @@
+<header class="site-header">
+  <div class="header-inner container">
+    
+    <a href="{{ url_for('main.home') }}" class="brand-logo" aria-label="CodNesta Group">
+      <img src="{{ url_for('static', filename='images/codnesta-logo.png') }}" alt="CodNesta Logo" class="brand-img">
+      <div class="brand-text">
+        <span class="brand-title"><span class="text-navy">CodNesta</span> <span class="text-gold">Group</span></span>
+        <span class="brand-tagline">Innovation for Generations</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="{% if request.endpoint == 'main.home' %}#hero{% else %}{{ url_for('main.home') }}#hero{% endif %}" class="nav-link active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% if request.endpoint == 'main.home' %}#about{% else %}{{ url_for('main.home') }}#about{% endif %}" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% if request.endpoint == 'main.home' %}#divisions{% else %}{{ url_for('main.home') }}#divisions{% endif %}" class="nav-link">Divisions</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% if request.endpoint == 'main.home' %}#impact{% else %}{{ url_for('main.home') }}#impact{% endif %}" class="nav-link">Impact</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% if request.endpoint == 'main.home' %}#contact-cta{% else %}{{ url_for('main.home') }}#contact-cta{% endif %}" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a href="{% if request.endpoint == 'main.home' %}#blog-insights{% else %}{{ url_for('main.home') }}#blog-insights{% endif %}" class="nav-link">Blog</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="{% if request.endpoint == 'main.home' %}#contact-cta{% else %}{{ url_for('main.home') }}#contact-cta{% endif %}" class="btn btn-primary">
+        <span>Work With Us</span>
+      </a>
+
+      <button class="mobile-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle Navigation Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+  </div>
+</header>

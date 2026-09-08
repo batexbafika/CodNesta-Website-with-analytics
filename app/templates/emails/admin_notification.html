@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Inquiry Notification</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color:var(--color-navy, #0a3857);
+      color: #e2e8f0;
+      margin: 0;
+      padding: 40px 12px;
+    }
+    .email-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color:var(--color-navy, #0a3857);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .email-header {
+      background: linear-gradient(135deg, #0b1329 0%, #1a2a4a 100%);
+      padding: 30px 40px;
+      border-bottom: 2px solid #d4af37;
+      text-align: center;
+    }
+    .brand-title {
+      color: #d4af37;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .header-sub {
+      color: #94a3b8;
+      font-size: 13px;
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .email-body {
+      padding: 35px 40px;
+    }
+    .badge {
+      display: inline-block;
+      background-color: rgba(212, 175, 55, 0.15);
+      color: #d4af37;
+      border: 1px solid #d4af37;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+    }
+    .data-table td {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 15px;
+    }
+    .data-label {
+      color: #94a3b8;
+      font-weight: 600;
+      width: 35%;
+    }
+    .data-value {
+      color: #f8fafc;
+      font-weight: 500;
+    }
+    .message-box {
+      background-color: #0b1329;
+      border-left: 3px solid #d4af37;
+      padding: 18px 20px;
+      border-radius: 0 8px 8px 0;
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+    .action-btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 28px;
+      background-color: #d4af37;
+      color: #0b1329 !important;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .email-footer {
+      background-color: #080e1e;
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 12px;
+      color: #64748b;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="email-card">
+    <div class="email-header">
+      <h1 class="brand-title">CodNesta Group</h1>
+      <div class="header-sub">Internal Admin Notification</div>
+    </div>
+    
+    <div class="email-body">
+      <span class="badge">New Contact Inquiry</span>
+      
+      <table class="data-table">
+        <tr>
+          <td class="data-label">Sender Name:</td>
+          <td class="data-value">{{ name }}</td>
+        </tr>
+        <tr>
+          <td class="data-label">Email Address:</td>
+          <td class="data-value"><a href="mailto:{{ email }}" style="color: #60a5fa; text-decoration: none;">{{ email }}</a></td>
+        </tr>
+        <tr>
+          <td class="data-label">Primary Interest:</td>
+          <td class="data-value" style="color: #d4af37; font-weight: 600;">{{ inquiry_label }}</td>
+        </tr>
+      </table>
+
+      <div style="font-weight: 600; color: #94a3b8; margin-bottom: 8px; font-size: 13px; text-transform: uppercase;">Message Content:</div>
+      <div class="message-box">
+        {{ message }}
+      </div>
+
+      <a href="mailto:{{ email }}?subject=Re:%20CodNesta%20Inquiry%20-%20{{ inquiry_label }}" class="action-btn">Reply to Inquiry</a>
+    </div>
+
+    <div class="email-footer">
+      Automated dispatch from CodNesta Ecosystem Infrastructure.
+    </div>
+  </div>
+</body>
+</html>

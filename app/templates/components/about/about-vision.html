@@ -1,0 +1,75 @@
+<!-- ==========================================================================
+     CODNASTA ABOUT STORY, VISION & MISSION SECTION (LIGHT THEME + ANIMATION)
+     ========================================================================== -->
+<section id="our-story" class="about-story">
+  <!-- Dynamic Image: Primary static/images/about-vision.jpg with Unsplash Fallback -->
+  <img 
+    src="{{ url_for('static', filename='images/about-vision.jpg') }}" 
+    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80';"
+    alt="CodNesta Group Vision & Mission Background" 
+    class="about-story__bg-img"
+    loading="lazy"
+  >
+  
+  <div class="about-story__overlay" aria-hidden="true"></div>
+
+  <div class="container">
+    
+    <!-- Animated Section Header -->
+    <div class="about-story__header animate-on-scroll fade-up">
+      <span class="about-story__eyebrow">Who We Are</span>
+      <h2 class="about-story__heading">Bridging Potential and Opportunity</h2>
+    </div>
+
+    <div class="about-story__grid">
+      
+      <!-- Animated Narrative Block -->
+      <div class="about-story__content animate-on-scroll fade-right">
+        <h3 class="about-story__subheading">Our Journey</h3>
+        <p class="about-story__text">
+          CodNesta Group was founded to solve a critical challenge: the gap between academic knowledge and real-world technology execution. While theoretical education establishes strong foundations, modern industries require hands-on technical proficiency, adaptability, and immediate value creation.
+        </p>
+        <p class="about-story__text">
+          We believe that opportunity should be inclusive-driven by potential, dedication, and growth rather than traditional academic benchmarks. By merging practical talent development with enterprise software engineering, we empower individuals and organizations to thrive in an evolving digital ecosystem.
+        </p>
+      </div>
+
+      <!-- Vision & Mission Cards with Staggered Fade Up -->
+      <div class="about-story__cards">
+        
+        <!-- Vision Card -->
+        <article class="about-card about-card--vision animate-on-scroll fade-up delay-1">
+          <div class="about-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path>
+            </svg>
+          </div>
+          <span class="about-card__label">01. Vision</span>
+          <h4 class="about-card__title">Innovation Across Generations</h4>
+          <p class="about-card__description">
+            To drive innovation, create scalable digital solutions, and generate community impact that spans generations.
+          </p>
+        </article>
+
+        <!-- Mission Card -->
+        <article class="about-card about-card--mission animate-on-scroll fade-up delay-2">
+          <div class="about-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <span class="about-card__label">02. Mission</span>
+          <h4 class="about-card__title">Turning Knowledge into Capability</h4>
+          <p class="about-card__description">
+            Transforming learning into practical capability through immersive education, digital software products, and strategic talent development.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+<!-- ==========================================================================
+     CODNASTA ABOUT HERO SECTION
+     ========================================================================== -->
+<section class="about-hero">
+  <div class="about-hero__pattern" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="about-hero__layout">
+
+      <!-- Left Column: Content (Enters from Left) -->
+      <div class="about-hero__content reveal-on-scroll reveal-isometric is-visible" style="--delay: 0.15s;">
+
+        <div class="about-hero__badge hero-eyebrow">
+          <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+          <span>About CodNesta Group</span>
+        </div>
+
+        <h1 class="about-hero__title hero-title">
+          Innovation for <span>Generations.</span>
+        </h1>
+
+        <p class="about-hero__description hero-description">
+          CodNesta Group transforms academic learning into practical, industry-ready skills, digital solutions, and meaningful opportunities that create lasting impact.
+        </p>
+
+        <div class="about-hero__actions">
+          <a href="{{url_for('main.about')}}#our-story" class="button button--primary">
+            Discover Our Story <span aria-hidden="true">→</span>
+          </a>
+          <a href="{{ url_for('main.home')}}#contact-cta" class="button button--secondary">
+            Get in Touch <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Quick Proof Tags -->
+        <ul class="about-hero__features">
+          <li class="about-hero__feature">
+            <span class="about-hero__feature-icon">✓</span>
+            <span>Practical Learning</span>
+          </li>
+          <li class="about-hero__feature">
+            <span class="about-hero__feature-icon">✓</span>
+            <span>Digital Innovation</span>
+          </li>
+          <li class="about-hero__feature">
+            <span class="about-hero__feature-icon">✓</span>
+            <span>Community Impact</span>
+          </li>
+          <li class="about-hero__feature">
+            <span class="about-hero__feature-icon">✓</span>
+            <span>Future-Ready Talent</span>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Right Column: Visual Frame & Commitment Card (Enters from Right) -->
+      <div class="about-hero__visual reveal-on-scroll reveal-tilt-up is-visible" style="--delay: 0.3s;">
+
+        <div class="about-hero__image-frame image-reveal">
+          <img
+            src="{{ url_for('static', filename='images/about/about-hero1.jpg') }}"
+            alt="Young professionals collaborating in a practical technology learning environment"
+            class="about-hero__image"
+          >
+          <div class="about-hero__image-overlay"></div>
+        </div>
+
+        <div class="about-hero__visual-accent" aria-hidden="true"></div>
+
+        <!-- Floating Commitment Card -->
+        <article class="about-hero__floating-card">
+          <p class="about-hero__floating-label">Our Commitment</p>
+          <h2 class="about-hero__floating-title">Turning knowledge into capability.</h2>
+          <div class="about-hero__floating-line"></div>
+          <p class="about-hero__floating-text">
+            Connecting education, innovation, and opportunity to prepare individuals for the digital economy.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </div>
+</section>

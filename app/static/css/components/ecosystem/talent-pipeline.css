@@ -1,0 +1,154 @@
+/* ==========================================================================
+   3. INTERACTIVE TALENT PROGRESSION PIPELINE (SPLIT-SCREEN COMPACT CSS)
+   ========================================================================== */
+.pipeline-section {
+  padding: 0;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.pipeline-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: var(--container-width, 1080px);
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .pipeline-container {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
+/* Left Column: Light Background (Text + Image) */
+.pipeline-left {
+  background-color: #f8fafc;
+  padding: clamp(1.5rem, 3.5vw, 2.25rem) clamp(1rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.pipeline-eyebrow {
+  display: inline-block;
+  padding: 0.45rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-navy);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.pipeline-title {
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  font-weight: 700;
+  color: var(--color-navy-dark, #072235);
+  line-height: 1.25;
+  margin: 0 0 0.35rem 0;
+}
+
+.pipeline-title span {
+  color: var(--color-gold, #f59e0b);
+}
+
+.pipeline-description {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.pipeline-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pipeline-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+}
+
+/* Right Column: White Background (Steps Grid) */
+.pipeline-right {
+  background-color: #ffffff;
+  padding: clamp(1.5rem, 3.5vw, 2.25rem) clamp(1rem, 3vw, 2rem);
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .pipeline-right {
+    border-top: none;
+    border-left: 1px solid #e2e8f0;
+  }
+}
+
+.pipeline-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.pipeline-step {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pipeline-step:hover {
+  border-color: rgba(245, 158, 11, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 56, 87, 0.06);
+}
+
+.step-number {
+  font-size: 0.725rem;
+  font-weight: 800;
+  color: var(--color-gold, #f59e0b);
+  background: rgba(245, 158, 11, 0.15);
+  display: inline-block;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.step-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-navy-dark, #072235);
+}
+
+.step-text {
+  font-size: 0.725rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+@media (max-width: 576px) {
+  .pipeline-steps {
+    grid-template-columns: 1fr;
+  }
+}

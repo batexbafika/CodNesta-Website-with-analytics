@@ -1,0 +1,236 @@
+/* ==========================================================================
+   INITIATIVES COMPONENT STYLES (FULL RESPONSIVE MODULE)
+   ========================================================================== */
+
+/* Section Layout */
+.initiatives-section {
+  padding: clamp(var(--space-6, 2.5rem), 6vw, var(--space-8, 5rem)) 0;
+  background-color: var(--color-bg-light, #f8fafc);
+  color: var(--color-navy-dark, #061826);
+  font-family: var(--font-primary, sans-serif);
+  position: relative;
+  border-top: 1px solid var(--color-border, #e2e8f0);
+}
+
+.initiatives-container {
+  max-width: var(--container-width, 1200px);
+  margin: 0 auto;
+  padding: 0 clamp(var(--space-4, 1rem), 4vw, var(--container-padding, 2rem));
+}
+
+/* Header */
+.initiatives-header {
+  text-align: center;
+  max-width: 44rem;
+  margin: 0 auto clamp(var(--space-5, 1.5rem), 4vw, var(--space-7, 2.5rem)) auto;
+}
+
+.initiatives-subtitle {
+  display: inline-block;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: var(--font-weight-semibold, 600);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-navy, #0a3857);
+  background: rgba(10, 56, 87, 0.06);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-pill, 9999px);
+  border: 1px solid rgba(10, 56, 87, 0.12);
+  margin-bottom: var(--space-3, 0.75rem);
+}
+
+.initiatives-title {
+  font-size: clamp(var(--font-size-xl, 1.25rem), 4vw, var(--font-size-2xl, 1.75rem));
+  font-weight: var(--font-weight-bold, 700);
+  line-height: var(--line-height-heading, 1.2);
+  color: var(--color-navy-dark, #061826);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .initiatives-title {
+    font-size: var(--font-size-3xl, 2.25rem);
+  }
+}
+
+.initiatives-description {
+  margin-top: var(--space-4, 1rem);
+  color: var(--color-text-muted, #475569);
+  font-size: var(--font-size-base, 1rem);
+  line-height: var(--line-height-body, 1.6);
+}
+
+/* Grid Layout */
+.initiatives-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(var(--space-4, 1rem), 3vw, var(--space-6, 1.5rem));
+}
+
+@media (min-width: 640px) {
+  .initiatives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .initiatives-grid {
+    gap: var(--space-6, 1.5rem);
+  }
+}
+
+/* Initiative Card Component */
+.initiative-card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform var(--ease-classic, cubic-bezier(0.4, 0, 0.2, 1)) 0.3s,
+              box-shadow var(--ease-classic, cubic-bezier(0.4, 0, 0.2, 1)) 0.3s,
+              border-color var(--ease-classic, cubic-bezier(0.4, 0, 0.2, 1)) 0.3s;
+}
+
+@media (hover: hover) {
+  .initiative-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px -8px rgba(10, 56, 87, 0.1);
+    border-color: rgba(10, 56, 87, 0.25);
+  }
+}
+
+/* Featured Styling for Agentee */
+.initiative-card-featured {
+  border-color: rgba(10, 56, 87, 0.2);
+  box-shadow: 0 8px 20px -4px rgba(10, 56, 87, 0.06);
+}
+
+.initiative-card-featured .card-badge {
+  background-color: var(--color-gold-dark, #b48300);
+  color: #ffffff;
+}
+
+/* Card Image Wrapper */
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: clamp(160px, 22vw, 200px);
+  overflow: hidden;
+  background-color: #e2e8f0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ease-classic, cubic-bezier(0.4, 0, 0.2, 1)) 0.5s;
+}
+
+@media (hover: hover) {
+  .initiative-card:hover .card-image {
+    transform: scale(1.05);
+  }
+}
+
+.card-badge {
+  position: absolute;
+  top: var(--space-3, 0.75rem);
+  left: var(--space-3, 0.75rem);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: var(--font-weight-semibold, 600);
+  color: #ffffff;
+  background-color: rgba(10, 56, 87, 0.9);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 4px var(--space-3, 0.75rem);
+  border-radius: var(--radius-pill, 9999px);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* Card Content Area */
+.card-content {
+  padding: clamp(var(--space-4, 1rem), 3vw, var(--space-6, 1.5rem));
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: clamp(var(--font-size-lg, 1.125rem), 2.5vw, var(--font-size-xl, 1.25rem));
+  font-weight: var(--font-weight-bold, 700);
+  color: var(--color-navy-dark, #061826);
+  margin: 0 0 var(--space-3, 0.75rem) 0;
+  line-height: var(--line-height-heading, 1.2);
+}
+
+.card-summary {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-muted, #475569);
+  line-height: var(--line-height-body, 1.6);
+  margin: 0 0 var(--space-5, 1.25rem) 0;
+  flex-grow: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2, 0.5rem);
+  margin-bottom: var(--space-5, 1.25rem);
+}
+
+.tag {
+  font-size: clamp(0.68rem, 1.5vw, 0.75rem);
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--color-text-muted, #64748b);
+  background-color: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm, 4px);
+  white-space: nowrap;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* Touch target baseline */
+  gap: var(--space-2, 0.5rem);
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-navy, #0a3857);
+  text-decoration: none;
+  margin-top: auto;
+  transition: color var(--ease-classic, cubic-bezier(0.4, 0, 0.2, 1)) 0.3s;
+}
+
+.card-link span {
+  transition: transform var(--ease-classic, cubic-bezier(0.4, 0, 0.2, 1)) 0.3s;
+}
+
+.card-link:hover {
+  color: var(--color-gold-dark, #b48300);
+}
+
+.card-link:hover span {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   EXTRA SMALL MOBILE BREAKPOINTS (< 380px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .card-content {
+    padding: var(--space-4, 1rem);
+  }
+
+  .card-badge {
+    font-size: 0.65rem;
+    padding: 2px var(--space-2, 0.5rem);
+  }
+
+  .card-tags {
+    gap: 0.25rem;
+  }
+}

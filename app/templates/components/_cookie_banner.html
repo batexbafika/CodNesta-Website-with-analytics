@@ -1,0 +1,26 @@
+<!-- app/templates/components/_cookie_banner.html -->
+<div id="cookieConsentBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Consent Notice">
+  <div class="cookie-banner-container">
+    <div class="cookie-content">
+      <div class="cookie-header">
+        <svg class="cookie-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5z"/>
+          <circle cx="8.5" cy="8.5" r=".5" fill="currentColor"/>
+          <circle cx="10" cy="15" r=".5" fill="currentColor"/>
+          <circle cx="15" cy="11" r=".5" fill="currentColor"/>
+        </svg>
+        <h4 class="cookie-title">We Value Your Privacy</h4>
+      </div>
+      <p class="cookie-text">
+        CodNesta uses essential cookies for site functionality and analytics to optimize your experience. Read our 
+        <a href="{{ url_for('main.privacy_policy') }}" class="cookie-link">Privacy Policy</a> to learn more.
+      </p>
+    </div>
+
+    <div class="cookie-actions">
+      <button id="rejectCookiesBtn" class="cookie-btn cookie-btn-reject" type="button">Reject Non-Essential</button>
+      <button id="acceptCookiesBtn" class="cookie-btn cookie-btn-accept" type="button">Accept All</button>
+    </div>
+  </div>
+</div>

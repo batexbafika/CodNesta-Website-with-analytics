@@ -1,0 +1,139 @@
+/* ==========================================================================
+   SITE FOOTER COMPONENT STYLES (FULL RESPONSIVE MODULE)
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-navy-deep, #061826);
+  color: rgba(var(--color-white-rgb, 255, 255, 255), 0.7);
+  padding: clamp(var(--space-6, 2.5rem), 6vw, var(--space-8, 5rem)) 0 clamp(var(--space-4, 1rem), 4vw, var(--space-6, 2rem));
+  border-top: 1px solid rgba(var(--color-white-rgb, 255, 255, 255), 0.08);
+  font-family: var(--font-primary, sans-serif);
+}
+
+.footer-container {
+  max-width: var(--container-width, 1200px);
+  margin: 0 auto;
+  padding: 0 clamp(var(--space-4, 1rem), 4vw, var(--container-padding, 2rem));
+}
+
+/* Footer Multi-Column Grid Layout (Single row on desktop) */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(var(--space-5, 1.5rem), 4vw, var(--space-7, 2.5rem));
+  margin-bottom: clamp(var(--space-5, 1.5rem), 4vw, var(--space-7, 2.5rem));
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 4-column layout on desktop: Brand (2fr), Navigation (1fr), Get Involved (1fr), Follow CodNesta (1fr) */
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+}
+
+/* Brand & Info Column */
+.footer-description {
+  margin-top: var(--space-4, 1rem);
+  max-width: 360px;
+  font-size: var(--font-size-sm, 0.875rem);
+  line-height: var(--line-height-body, 1.6);
+  color: rgba(var(--color-white-rgb, 255, 255, 255), 0.7);
+}
+
+/* Column Headings */
+.footer-heading {
+  display: block;
+  color: var(--color-white, #ffffff);
+  font-weight: var(--font-weight-semibold, 600);
+  margin-bottom: clamp(var(--space-3, 0.75rem), 2vw, var(--space-5, 1.25rem));
+  font-size: var(--font-size-base, 1rem);
+  letter-spacing: -0.01em;
+}
+
+/* Menu Lists & Links */
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1, 0.25rem);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* Accessible touch target standard */
+  padding: 0.25rem 0;
+  color: rgba(var(--color-white-rgb, 255, 255, 255), 0.7);
+  font-size: var(--font-size-sm, 0.875rem);
+  text-decoration: none;
+  transition: color var(--transition-fast, 0.2s ease);
+}
+
+@media (hover: hover) {
+  .footer-menu a:hover {
+    color: var(--color-gold, #f4b400);
+  }
+}
+
+/* Bottom Bar / Copyright */
+.footer-bottom {
+  padding-top: clamp(var(--space-4, 1rem), 3vw, var(--space-6, 2rem));
+  border-top: 1px solid rgba(var(--color-white-rgb, 255, 255, 255), 0.08);
+  font-size: var(--font-size-sm, 0.875rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3, 0.75rem);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--space-3, 0.75rem), 2vw, var(--space-5, 1.25rem));
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-legal a {
+  color: rgba(var(--color-white-rgb, 255, 255, 255), 0.6);
+  text-decoration: none;
+  font-size: var(--font-size-xs, 0.75rem);
+  transition: color var(--transition-fast, 0.2s ease);
+}
+
+@media (hover: hover) {
+  .footer-legal a:hover {
+    color: var(--color-gold, #f4b400);
+  }
+}
+
+/* ==========================================================================
+   EXTRA SMALL MOBILE BREAKPOINTS (< 380px)
+   ========================================================================== */
+@media (max-width: 380px) {
+  .footer-description {
+    font-size: var(--font-size-xs, 0.75rem);
+  }
+
+  .footer-bottom {
+    font-size: var(--font-size-xs, 0.75rem);
+  }
+}

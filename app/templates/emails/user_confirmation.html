@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You for Contacting CodNesta</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--color-navy, #0a3857);
+      color: #e2e8f0;
+      margin: 0;
+      padding: 40px 12px;
+    }
+    .email-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: var(--color-navy, #0a3857);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .email-header {
+      background: linear-gradient(135deg, #0b1329 0%, #1a2a4a 100%);
+      padding: 35px 40px;
+      border-bottom: 2px solid #d4af37;
+      text-align: center;
+    }
+    .brand-title {
+      color: #d4af37;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .header-sub {
+      color: #94a3b8;
+      font-size: 12px;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .email-body {
+      padding: 35px 40px;
+      line-height: 1.7;
+    }
+    .greeting {
+      font-size: 20px;
+      font-weight: 600;
+      color: #f8fafc;
+      margin-bottom: 15px;
+    }
+    .text-p {
+      color: #cbd5e1;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    .highlight-box {
+      background-color: #0b1329;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+      text-align: center;
+    }
+    .highlight-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #94a3b8;
+      margin-bottom: 5px;
+    }
+    .highlight-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: #d4af37;
+    }
+    .cta-container {
+      text-align: center;
+      margin: 30px 0 10px 0;
+    }
+    .btn-gold {
+      display: inline-block;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+      color: #0b1329 !important;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .email-footer {
+      background-color: #080e1e;
+      padding: 25px 40px;
+      text-align: center;
+      font-size: 12px;
+      color: #64748b;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .footer-links {
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .footer-links a:hover {
+      color: #d4af37;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-card">
+    <div class="email-header">
+      <h1 class="brand-title">CodNesta Group</h1>
+      <div class="header-sub">Innovation for Generations</div>
+    </div>
+
+    <div class="email-body">
+      <div class="greeting">Hello {{ name }},</div>
+      
+      <p class="text-p">
+        Thank you for reaching out to <strong>CodNesta Group</strong>. We have successfully received your message regarding your interest in our ecosystem.
+      </p>
+
+      <div class="highlight-box">
+        <div class="highlight-title">Inquiry Category</div>
+        <div class="highlight-value">{{ inquiry_label }}</div>
+      </div>
+
+      <p class="text-p">
+        A representative or technical team lead matching your request will review your submission and follow up with you within <strong>24 to 48 business hours</strong>.
+      </p>
+
+      <div class="cta-container">
+        <a href="https://codnesta.com" class="btn-gold">Explore CodNesta Ecosystem</a>
+      </div>
+    </div>
+
+    <div class="email-footer">
+      <div class="footer-links">
+        <a href="https://codnesta.com">Home</a> &bull;
+        <a href="https://codnesta.com/services">Divisions</a> &bull;
+        <a href="https://codnesta.com/ecosystem">Ecosystem</a>
+      </div>
+      &copy; 2026 CodNesta Group. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
